@@ -35,4 +35,8 @@ export default [
     id: 9,
     title: 'Пылесосы',
   },
+  {
+    id: 10,
+    title: 'Телевизоры',
+  },
 ];
