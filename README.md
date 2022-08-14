@@ -1,4 +1,4 @@
-# tehnozavr1
+# tehnozavr1 Vue js
 
 ## Project setup
 ```
