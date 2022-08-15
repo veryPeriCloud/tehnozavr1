@@ -1,4 +1,4 @@
-<!-- eslint-disable vue/no-mutating-props -->
+<!-- eslint-disable no-undef -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
@@ -23,7 +23,7 @@
         <label class="form__label form__label--select">
           <select class="form__select" type="text" name="category" v-model.number="currentCategoryId">
             <option value="0">Все категории</option>
-            <option :value="category.id" v-for="category in categories" :key="category.id">{{ category.title }}</option>
+            <option :value="category.id" v-for="category in categories" :key="category.id">{{ category.title}}</option>
           </select>
         </label>
       </fieldset>
@@ -33,9 +33,8 @@
         <ul class="colors">
           <li class="colors__item" v-for="color in colors" :key="color.id">
             <label class="colors__label">
-              <input class="colors__radio sr-only" type="radio" v-model="currentColorId" :value="color.id">
-              <span class="colors__value" :style="{ backgroundColor: color.color}">
-              </span>
+              <input class="colors__radio sr-only" type="radio" v-model="currentColorId" :value="color.color">
+              <span class="colors__value" :style="{ backgroundColor: color.color}"></span>
             </label>
           </li>
         </ul>
@@ -116,6 +115,7 @@ import categories from '../data/categories';
 import colors from '../data/colors';
 
 export default {
+
   data() {
     return {
       currentPriceFrom: 0,

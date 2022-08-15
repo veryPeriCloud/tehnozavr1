@@ -2,7 +2,16 @@ export default [
   {
     id: 1,
     categoryId: 1,
-    colorId: 1,
+    colors: [
+      {
+        id: 3,
+        color: '#939393',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Ультрабук Huawei MateBook X Pro 13.9"',
     price: 119999,
     image: 'img/ultrabook.jpg',
@@ -10,7 +19,17 @@ export default [
   {
     id: 2,
     categoryId: 1,
-    colorId: 1,
+    // colorId: 1,
+    colors: [
+      {
+        id: 3,
+        color: '#939393',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Моноблок Apple iMac Z0ZV0007V, 27", Intel Core i5 10500',
     price: 220990,
     image: 'img/monoblock.jpg',
@@ -18,7 +37,13 @@ export default [
   {
     id: 3,
     categoryId: 2,
-    colorId: 4,
+    // colorId: 4,
+    colors: [
+      {
+        id: 4,
+        color: '#8BE000',
+      },
+    ],
     title: 'Смартфон Apple iPhone 11 64Gb, MHDG3RU/A',
     price: 49990,
     image: 'img/phone.jpg',
@@ -26,7 +51,17 @@ export default [
   {
     id: 4,
     categoryId: 3,
-    colorId: 7,
+    // colorId: 7,
+    colors: [
+      {
+        id: 3,
+        color: '#939393',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Фен BELLISSIMA My Pro Hydra Sonic, черный',
     price: 21990,
     image: 'img/hairdryer.jpg',
@@ -34,7 +69,17 @@ export default [
   {
     id: 5,
     categoryId: 2,
-    colorId: 7,
+    // colorId: 7,
+    colors: [
+      {
+        id: 5,
+        color: '#FF6B00',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: ' Смартфон Xiaomi Redmi 6/128GB',
     price: 14990,
     image: 'img/phone-2.jpg',
@@ -42,7 +87,17 @@ export default [
   {
     id: 6,
     categoryId: 4,
-    colorId: 7,
+    // colorId: 7,
+    colors: [
+      {
+        id: 6,
+        color: '#ffffff',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Умная колонка ЯНДЕКС Станция Новая Станция Мини с часами',
     price: 7890,
     image: 'img/column.jpg',
@@ -50,7 +105,17 @@ export default [
   {
     id: 7,
     categoryId: 5,
-    colorId: 7,
+    // colorId: 7,
+    colors: [
+      {
+        id: 5,
+        color: '#FF6B00',
+      },
+      {
+        id: 6,
+        color: '#ffffff',
+      },
+    ],
     title: 'Гарнитура Beats Studio Buds True Wireless Noise Cancelling, Bluetooth, вкладыши',
     price: 11990,
     image: 'img/earphines.jpg',
@@ -58,7 +123,17 @@ export default [
   {
     id: 8,
     categoryId: 5,
-    colorId: 5,
+    // colorId: 5,
+    colors: [
+      {
+        id: 5,
+        color: '#FF6B00',
+      },
+      {
+        id: 6,
+        color: '#ffffff',
+      },
+    ],
     title: 'Гарнитура Beats EP, 3.5 мм, мониторные',
     price: 6990,
     image: 'img/headphones.jpg',
@@ -66,7 +141,17 @@ export default [
   {
     id: 9,
     categoryId: 6,
-    colorId: 7,
+    // colorId: 7,
+    colors: [
+      {
+        id: 3,
+        color: '#939393',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Винный шкаф TESLER WCD-242 однокамерный черный/стекло',
     price: 26190,
     image: 'img/winecabinet.jpg',
@@ -74,7 +159,17 @@ export default [
   {
     id: 10,
     categoryId: 7,
-    colorId: 6,
+    // colorId: 6,
+    colors: [
+      {
+        id: 6,
+        color: '#ffffff',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Игровая консоль Microsoft Xbox Series S RRS-00009',
     price: 34990,
     image: 'img/xbox.jpg',
@@ -82,7 +177,17 @@ export default [
   {
     id: 11,
     categoryId: 8,
-    colorId: 7,
+    // colorId: 7,
+    colors: [
+      {
+        id: 5,
+        color: '#FF6B00',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Кресло игровое Aerocool AERO 1 Alpha, на колесиках',
     price: 17090,
     image: 'img/chair.jpg',
@@ -90,7 +195,21 @@ export default [
   {
     id: 12,
     categoryId: 9,
-    colorId: 6,
+    // colorId: 6,
+    colors: [
+      {
+        id: 5,
+        color: '#FF6B00',
+      },
+      {
+        id: 6,
+        color: '#ffffff',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Робот-пылесос Xiaomi Mi Robot Vacuum-Mop 2 Lite EU',
     price: 19599,
     image: 'img/vacuumcleaner.jpg',
@@ -98,7 +217,8 @@ export default [
   {
     id: 13,
     categoryId: 2,
-    colorId: 2,
+    // colorId: 2,
+    colors: [2, 3, 4],
     title: 'Смартфон Xiaomi Poco M4 Pro 6/128Gb',
     price: 22990,
     image: 'img/xiaomi.jpg',
@@ -106,7 +226,17 @@ export default [
   {
     id: 13,
     categoryId: 10,
-    colorId: 3,
+    // colorId: 3,
+    colors: [
+      {
+        id: 3,
+        color: '#939393',
+      },
+      {
+        id: 7,
+        color: '#000000',
+      },
+    ],
     title: 'Телевизор LG OLED48C2RLA.ADKB, 48", OLED, Ultra HD 4K',
     price: 148880,
     image: 'img/tv.jpg',

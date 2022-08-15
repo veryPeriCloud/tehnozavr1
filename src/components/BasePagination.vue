@@ -1,5 +1,5 @@
 <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
-<!-- eslint-disable max-len -->
+
 <template>
   <ul class="catalog__pagination pagination">
     <li class="pagination__item">
@@ -13,7 +13,9 @@
       </a>
     </li>
     <li class="pagination__item" v-for="pageNumber in pages" :key="pageNumber">
-      <a href="#" class="pagination__link" :class="{'pagination__link--current': pageNumber === page}" @click.prevent="paginate(pageNumber)">
+      <a href="#" class="pagination__link"
+      :class="{'pagination__link--current': pageNumber === page}"
+      @click.prevent="paginate(pageNumber)">
         {{pageNumber}}
       </a>
     </li>

@@ -1,3 +1,5 @@
+<!-- eslint-disable max-len -->
+<!-- eslint-disable max-len -->
 <!-- eslint-disable import/extensions -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
@@ -42,7 +44,7 @@ export default {
       filterColorId: 0,
 
       page: 1,
-      productsPerPage: 12,
+      productsPerPage: 6,
     };
   },
   computed: {
@@ -65,7 +67,7 @@ export default {
 
       if (this.filterColorId) {
         // eslint-disable-next-line max-len
-        filteredProducts = filteredProducts.filter((product) => product.colorId === this.filterColorId);
+        filteredProducts = filteredProducts.filter((product) => product.colors.some((color) => color === this.filterColorId));
       }
 
       return filteredProducts;
