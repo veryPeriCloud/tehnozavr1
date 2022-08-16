@@ -21,7 +21,7 @@ export default [
   },
   {
     id: 6,
-    color: '#ffffff',
+    color: '#f0ebeb',
   },
   {
     id: 7,
