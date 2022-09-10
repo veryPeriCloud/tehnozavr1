@@ -1,15 +1,13 @@
 /* eslint-disable no-alert */
 import Vue from 'vue';
 import App from './App.vue';
-
-// import { data, data2 } from './data';
-// import say from './outer';
+import router from './router';
+import store from './store';
 
 Vue.config.productionTip = false;
 
 new Vue({
+  router,
+  store,
   render: (h) => h(App),
 }).$mount('#app');
-
-// say(data);
-// say(data2);
