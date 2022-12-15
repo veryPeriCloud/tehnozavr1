@@ -34,7 +34,7 @@
           <li class="colors__item" v-for="color in colors" :key="color.id">
             <label class="colors__label">
               <input class="colors__radio sr-only" type="radio" v-model="currentColorId" :value="color.id">
-              <span class="colors__value" :style="{ backgroundColor: color.color}"></span>
+              <span class="colors__value" :style="{ backgroundColor: color.code}"></span>
             </label>
           </li>
         </ul>
@@ -111,8 +111,8 @@
 </template>
 
 <script>
-import categories from '../data/categories';
-import colors from '../data/colors';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default {
 
@@ -122,15 +122,18 @@ export default {
       currentPriceTo: 0,
       currentCategoryId: 0,
       currentColorId: 0,
+
+      categoriesData: null,
+      colorsData: null,
     };
   },
   props: ['priceFrom', 'priceTo', 'categoryId', 'colorId'],
   computed: {
     categories() {
-      return categories;
+      return this.categoriesData ? this.categoriesData.items : [];
     },
     colors() {
-      return colors;
+      return this.colorsData ? this.colorsData.items : [];
     },
   },
   watch: {
@@ -160,6 +163,20 @@ export default {
       this.$emit('update:categoryId', 0);
       this.$emit('update:colorId', 0);
     },
+    loadCategories() {
+      axios.get(`${API_BASE_URL}/api/productCategories`)
+        .then((response) => { this.categoriesData = response.data; });
+    },
+    loadColors() {
+      axios.get(`${API_BASE_URL}/api/colors`)
+        .then((response) => {
+          this.colorsData = response.data;
+        });
+    },
+  },
+  created() {
+    this.loadCategories();
+    this.loadColors();
   },
 };
 </script>
