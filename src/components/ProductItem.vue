@@ -20,7 +20,7 @@
       <li class="colors__item" v-for="color in product.colors" :key="color.id">
         <label class="colors__label">
           <input class="colors__radio sr-only" type="radio" :value="color.id">
-          <span class="colors__value" :style="{ backgroundColor: color.color}">
+          <span class="colors__value" :style="{ backgroundColor: color.code}">
           </span>
         </label>
       </li>
@@ -29,13 +29,25 @@
 </template>
 
 <script>
-import colors from '@/data/colors';
 import gotoPage from '@/helpers/gotoPage';
 import numberFormat from '@/helpers/numberFormat';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default {
+  data() {
+    return {
+      colorsData: null,
+    };
+  },
   methods: {
     gotoPage,
+    loadColors() {
+      axios.get(`${API_BASE_URL}/api/colors`)
+        .then((response) => {
+          this.colorsData = response.data;
+        });
+    },
   },
   props: ['product'],
   filters: {
@@ -43,8 +55,11 @@ export default {
   },
   computed: {
     colors() {
-      return colors;
+      return this.colorsData ? this.colorsData.items : [];
     },
+  },
+  created() {
+    this.loadColors();
   },
 };
 </script>
