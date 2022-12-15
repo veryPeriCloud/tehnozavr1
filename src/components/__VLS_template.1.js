@@ -21,4 +21,6 @@ export default (await import('vue')).defineComponent({
     },
   },
 });
-const __VLS_template = () => ({});
+const __VLS_template = () => ({
+
+});

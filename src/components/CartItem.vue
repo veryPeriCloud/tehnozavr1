@@ -6,7 +6,6 @@
       <img :src="item.product.image" width="120" height="120" alt="item.product.title">
     </div>
     <h3 class="product__title">
-      Смартфон Xiaomi Redmi Note 7 Pro 6/128GB
       {{ item.product.title }}
     </h3>
     <span class="product__code">
@@ -18,7 +17,7 @@
       {{ (item.amount * item.product.price) | numberFormat }} ₽
     </b>
 
-    <button class="product__del button-del" type="button" aria-label="Удалить товар из корзины" @click.prevent="deleteProduct(item.productId)">
+    <button class="product__del button-del" type="button" aria-label="Удалить товар из корзины" @click.prevent="deleteCartProduct(item.productId)">
       <svg width="20" height="20" fill="currentColor">
         <use xlink:href="#icon-close"></use>
       </svg>
@@ -28,8 +27,10 @@
 
 <script>
 import numberFormat from '@/helpers/numberFormat';
-import { mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 import AmountCount from '@/components/AmountCount.vue';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default {
   components: { AmountCount },
@@ -41,12 +42,21 @@ export default {
         return this.item.amount;
       },
       set(value) {
-        this.$store.commit('updateCartProductAmount', { productId: this.item.productId, amount: value });
+        this.$store.dispatch('updateCartProductAmount', { productId: this.item.productId, amount: value });
       },
     },
   },
   methods: {
-    ...mapMutations({ deleteProduct: 'deleteCartProduct' }),
+    // ...mapMutations({ deleteProduct: 'deleteCartProduct' }),
+    ...mapActions(['deleteCartProduct']),
+    loadProduct() {
+      // this.productLoading = true;
+      // this.productLoadingFailed = false;
+      axios.get(`${API_BASE_URL}/api/baskets/products/${this.$route.params.id}`)
+        .then((response) => { this.productData = response.data; })
+        .catch(() => { this.productLoadingFailed = true; })
+        .then(() => { this.productLoading = false; });
+    },
   },
 };
 </script>
