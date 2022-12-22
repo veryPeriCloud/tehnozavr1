@@ -13,6 +13,7 @@
     </span>
 
     <AmountCount :count.sync="amount"/>
+
     <b class="product__price">
       {{ (item.amount * item.product.price) | numberFormat }} ₽
     </b>
@@ -50,8 +51,6 @@ export default {
     // ...mapMutations({ deleteProduct: 'deleteCartProduct' }),
     ...mapActions(['deleteCartProduct']),
     loadProduct() {
-      // this.productLoading = true;
-      // this.productLoadingFailed = false;
       axios.get(`${API_BASE_URL}/api/baskets/products/${this.$route.params.id}`)
         .then((response) => { this.productData = response.data; })
         .catch(() => { this.productLoadingFailed = true; })
