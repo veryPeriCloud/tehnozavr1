@@ -21,7 +21,7 @@
       </ul>
 
       <h1 class="content__title">
-        Заказ оформлен <span>№ 23621</span>
+        Заказ оформлен <span>№ {{ this.$route.params.id }}</span>
       </h1>
     </div>
 
@@ -74,6 +74,9 @@ export default {
     orderInfo() {
       return this.$store.state.orderInfo;
     },
+  },
+  created() {
+    this.$store.dispatch('loadOrderInfo', this.$route.params.id);
   },
   props: ['items'],
   filters: {
