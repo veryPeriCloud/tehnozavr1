@@ -42,6 +42,10 @@ export default new Vuex.Store({
     },
     updateCartProductsData(state, items) {
       state.cartProductsData = items;
+<<<<<<< HEAD
+=======
+      // console.log(state.cartProductsData);
+>>>>>>> master
     },
     syncCartProducts(state) {
       state.cartProducts = state.cartProductsData.map((item) => {
@@ -71,6 +75,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
+<<<<<<< HEAD
     loadOrderInfo(context, orderId) {
       return axios
         .get(`${API_BASE_URL}/api/orders/${orderId}`, {
@@ -82,6 +87,8 @@ export default new Vuex.Store({
           context.commit('updateOrderInfo', response.data);
         });
     },
+=======
+>>>>>>> master
     loadCart(context) {
       return axios
         .get(`${API_BASE_URL}/api/baskets`, {
@@ -99,7 +106,11 @@ export default new Vuex.Store({
         });
     },
     addProductToCart(context, { productId, amount }) {
+<<<<<<< HEAD
       return (new Promise((resolve) => { setTimeout(resolve, 1000); }))
+=======
+      return (new Promise((resolve) => { setTimeout(resolve, 2000); }))
+>>>>>>> master
         .then(() => {
           return axios
             .post(`${API_BASE_URL}/api/baskets/products`, {

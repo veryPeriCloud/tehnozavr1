@@ -3,7 +3,7 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <ul class="catalog__list">
-    <ProductItem :product="product" v-for="product in products" :key="product.id" />
+    <ProductItem :product="product" v-for="product in products" :key="product.id"/>
   </ul>
 </template>
 

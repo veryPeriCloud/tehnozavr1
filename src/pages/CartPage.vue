@@ -60,6 +60,9 @@ export default {
   computed: {
     ...mapGetters({ products: 'cartDetailProducts', totalPrice: 'cartTotalPrice' }),
   },
+<<<<<<< HEAD
   props: ['items'],
+=======
+>>>>>>> master
 };
 </script>
