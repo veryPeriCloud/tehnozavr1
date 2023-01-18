@@ -50,8 +50,11 @@ export default {
     // ...mapMutations({ deleteProduct: 'deleteCartProduct' }),
     ...mapActions(['deleteCartProduct']),
     loadProduct() {
+<<<<<<< HEAD
+=======
       // this.productLoading = true;
       // this.productLoadingFailed = false;
+>>>>>>> master
       axios.get(`${API_BASE_URL}/api/baskets/products/${this.$route.params.id}`)
         .then((response) => { this.productData = response.data; })
         .catch(() => { this.productLoadingFailed = true; })

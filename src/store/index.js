@@ -16,8 +16,17 @@ export default new Vuex.Store({
     userAccessKey: null,
 
     cartProductsData: [],
+
+    orderInfo: null,
   },
   mutations: {
+    updateOrderInfo(state, orderInfo) {
+      state.orderInfo = orderInfo;
+    },
+    resetCart(state) {
+      state.cartProducts = [];
+      state.cartProductsData = [];
+    },
     updateCartProductAmount(state, { productId, amount }) {
       const item = state.cartProducts.find((item) => item.productId === productId);
 
@@ -33,7 +42,10 @@ export default new Vuex.Store({
     },
     updateCartProductsData(state, items) {
       state.cartProductsData = items;
+<<<<<<< HEAD
+=======
       // console.log(state.cartProductsData);
+>>>>>>> master
     },
     syncCartProducts(state) {
       state.cartProducts = state.cartProductsData.map((item) => {
@@ -63,6 +75,20 @@ export default new Vuex.Store({
     },
   },
   actions: {
+<<<<<<< HEAD
+    loadOrderInfo(context, orderId) {
+      return axios
+        .get(`${API_BASE_URL}/api/orders/${orderId}`, {
+          params: {
+            userAccessKey: context.state.userAccessKey,
+          },
+        })
+        .then((response) => {
+          context.commit('updateOrderInfo', response.data);
+        });
+    },
+=======
+>>>>>>> master
     loadCart(context) {
       return axios
         .get(`${API_BASE_URL}/api/baskets`, {
@@ -80,7 +106,11 @@ export default new Vuex.Store({
         });
     },
     addProductToCart(context, { productId, amount }) {
+<<<<<<< HEAD
+      return (new Promise((resolve) => { setTimeout(resolve, 1000); }))
+=======
       return (new Promise((resolve) => { setTimeout(resolve, 2000); }))
+>>>>>>> master
         .then(() => {
           return axios
             .post(`${API_BASE_URL}/api/baskets/products`, {
